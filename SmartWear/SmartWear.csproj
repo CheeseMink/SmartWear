@@ -16,6 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="ViewModels\" />
     <Folder Include="Repositories\Interfaces\" />
     <Folder Include="Services\Interfaces\" />
   </ItemGroup>
