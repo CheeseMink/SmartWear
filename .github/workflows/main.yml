@@ -33,7 +33,7 @@ jobs: # Defines the jobs in the workflow.
         run: dotnet publish ./FinalProject_PRN222.sln --configuration Release --no-build --output "${{env.azure_webApp_packagePath}}"
 
       - name: Deployment
-        uses: actions/webapps-depoy@v2
+        uses: azure/webapps-deploy@v2
         with:
           app-name: ${{env.azure_webApp_packagePath}}
           package: "${{env.azure_webApp_packagePath}}"
