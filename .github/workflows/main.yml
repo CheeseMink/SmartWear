@@ -32,9 +32,10 @@ jobs: # Defines the jobs in the workflow.
       - name: Publish # Publishes the project's build artifacts.
         run: dotnet publish ./FinalProject_PRN222.sln --configuration Release --no-build --output "${{env.azure_webApp_packagePath}}"
 
-      - name: Deployment
+      - name: Deployment (FTP)
         uses: azure/webapps-deploy@v2
         with:
-          app-name: FinalProjectPRN222
+          app-name: ${{secrets.AZURE_WEB_APP_NAME}}
           package: "${{env.azure_webApp_packagePath}}"
           publish-profile: ${{secrets.AZURE_PUBLISH_PROFILE}}
+          deployment-method: FTP
